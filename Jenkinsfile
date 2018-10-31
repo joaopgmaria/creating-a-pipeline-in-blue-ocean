@@ -20,5 +20,11 @@ pipeline {
         sh './jenkins/scripts/test.sh'
       }
     }
+    stage('Deliver') {
+      steps {
+        input 'Deploy component?'
+        sh './jenkins/scripts/deliver.sh'
+      }
+    }
   }
 }
